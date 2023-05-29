@@ -1,0 +1,20 @@
+<div id="formulario">
+    <h1>Editar Equipamento</h1>
+    <form method="POST" action="/alterar-equipamento/{{equipamento.patrimonio}}">
+        <label for="tipo">Tipo:</label>
+        <input type="text" id="tipo" name="tipo" value="{{equipamento.tipo}}">
+        <br>
+        <label for="modelo">Modelo:</label>
+        <input type="text" id="modelo" name="modelo" value="{{equipamento.modelo}}">
+        <br>
+        <label for="localizacao">Localização:</label>
+        <input type="text" id="localizacao" name="localizacao" value="{{equipamento.localizacao}}">
+        <br>
+        <label for="informacao">Informação:</label>
+        <input type="text" id="informacao" name="informacao" value="{{equipamento.informacao}}">
+        <br>
+        <label for="perifericos">Periféricos:</label>
+        <input type="text" id="perifericos" name="perifericos" value="{{equipamento.perifericos}}">
+        <br>
+        <input type="submit" value="Salvar">
+    </form>

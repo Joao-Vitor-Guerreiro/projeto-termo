@@ -1,0 +1,24 @@
+<div id="formulario">
+    <h1>Editar Inventário-Termo</h1>
+    <form method="POST" action="/alterar-inventario-termo/{{inventario_termo.id_inventario_termo}}">
+        <label for="data_registro">Data de Registro:</label>
+        <input type="date" id="data_registro" name="data_registro" value="{{inventario_termo.data_registro}}" required>
+        <br>
+        <label for="status_disponibilidade">Status de Disponibilidade:</label>
+        <select id="status_disponibilidade" name="status_disponibilidade">
+            <option value="1" {{#if inventario_termo.status_disponibilidade}}selected{{/if}}>Disponível</option>
+            <option value="0" {{#unless inventario_termo.status_disponibilidade}}selected{{/unless}}>Indisponível
+            </option>
+        </select>
+        <br>
+        <label for="inventario_patrimonio">Patrimônio do Equipamento:</label>
+        <input type="text" id="inventario_patrimonio" name="inventario_patrimonio"
+            value="{{inventario_termo.inventario_patrimonio}}" required>
+        <br>
+        <label for="termo_id_termo">ID do Termo:</label>
+        <input type="text" id="termo_id_termo" name="termo_id_termo" value="{{inventario_termo.termo_id_termo}}"
+            required>
+        <br>
+        <input type="submit" value="Salvar">
+    </form>
+</div>

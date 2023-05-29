@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Lista de Inventário-Termo</title>
+</head>
+
+<body>
+	<h1>Lista de Inventário-Termo</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Data de Registro</th>
+				<th>Status de Disponibilidade</th>
+				<th>Inventário Patrimônio</th>
+				<th>ID do Termo</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each itens}}
+			<tr>
+				<td>{{id_inventario_termo}}</td>
+				<td>{{data_registro}}</td>
+				<td>{{status_disponibilidade}}</td>
+				<td>{{Inventario_patrimonio}}</td>
+				<td>{{Termo_id_termo}}</td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</body>
+
+</html>

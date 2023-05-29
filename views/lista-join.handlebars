@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Lista de Inventário</title>
+</head>
+<body>
+  <table>
+    <tr>
+      <th>Funcionário</th>
+      <th>Data de Saída</th>
+      <th>Data de Devolução</th>
+      <th>Patrimônio</th>
+      <th>Tipo</th>
+      <th>Modelo</th>
+      <th>Localização</th>
+      <th>Informação</th>
+      <th>Periféricos</th>
+      <th>Status de Disponibilidade</th>
+    </tr>
+    {{#each inventario}}
+    <tr>
+      <td>{{this.nome_funcionario}}</td>
+      <td>{{this.data_saida}}</td>
+      <td>{{this.data_devolucao}}</td>
+      <td>{{this.patrimonio}}</td>
+      <td>{{this.tipo}}</td>
+      <td>{{this.modelo}}</td>
+      <td>{{this.localizacao}}</td>
+      <td>{{this.informacao}}</td>
+      <td>{{this.perifericos}}</td>
+      <td>{{this.status_disponibilidade}}</td>
+    </tr>
+    {{/each}}
+  </table>
+</body>
+</html>

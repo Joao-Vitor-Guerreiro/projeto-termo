@@ -1,0 +1,55 @@
+<div id="formulario">
+    <h1>Formulário de Cadastro Inventário</h1>
+    <form method="POST" action="/add-inventario">
+        <label for="patrimonio">Patrimônio:</label>
+        <input type="text" id="patrimonio" name="patrimonio" required>
+        <br>
+        <label for="tipo">Tipo:</label>
+        <input type="text" id="tipo" name="tipo">
+        <br>
+        <label for="modelo">Modelo:</label>
+        <input type="text" id="modelo" name="modelo">
+        <br>
+        <label for="localizacao">Localização:</label>
+        <input type="text" id="localizacao" name="localizacao" required>
+        <br>
+        <label for="informacao">Informação:</label>
+        <input type="text" id="informacao" name="informacao">
+        <br>
+        <label for="perifericos">Periféricos:</label>
+        <input type="text" id="perifericos" name="perifericos">
+        <br>
+        <input type="submit" value="Cadastrar">
+    </form>
+</div>
+
+<div id="lista">
+    <table id="list">
+        <tr>
+            <th>Patrimônio</th>
+            <th>Tipo</th>
+            <th>Modelo</th>
+            <th>Localização</th>
+            <th>Informação</th>
+            <th>Periféricos</th>
+            <th>Ações</th>
+        </tr>
+        {{#each itens}}
+        <tr>
+            <td>{{patrimonio}}</td>
+            <td>{{tipo}}</td>
+            <td>{{modelo}}</td>
+            <td>{{localizacao}}</td>
+            <td>{{informacao}}</td>
+            <td>{{perifericos}}</td>
+            <td>
+                <div class="btn-crud" aria-label="Ações">
+                    <a href="/editar-equipamento/{{patrimonio}}" role="button">Editar</a>
+                    <a href="/excluir-equipamento/{{patrimonio}}" role="button">Excluir</a>
+                </div>
+
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+</div>

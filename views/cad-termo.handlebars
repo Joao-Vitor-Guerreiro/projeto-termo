@@ -1,0 +1,64 @@
+<div id="formulario">
+    <h1>Formulário de Cadastro de Termo</h1>
+    <form method="POST" action="/add-termo">
+        <label for="data_saida">Data de Saída:</label>
+        <input type="date" id="data_saida" name="data_saida" required>
+        <br>
+        <label for="data_devolucao">Data de Devolução:</label>
+        <input type="date" id="data_devolucao" name="data_devolucao">
+        <br>
+        <label for="motivo">Motivo:</label>
+        <input type="text" id="motivo" name="motivo" required>
+        <br>
+        <label for="status_pendencia">Status da Pendência:</label>
+        <select id="status_pendencia" name="status_pendencia">
+            <option value="0">Não</option>
+            <option value="1">Sim</option>
+        </select>
+        <br>
+        <label for="quantidade_equipamento">Quantidade de Equipamentos:</label>
+        <input type="number" id="quantidade_equipamento" name="quantidade_equipamento">
+        <br>
+        <label for="setor">Setor:</label>
+        <input type="text" id="setor" name="setor">
+        <br>
+        <label for="funcionario_cpf">CPF do Funcionário Responsável:</label>
+        <input type="text" id="funcionario_cpf" name="Funcionario_CPF" required>
+        <br>
+        <input type="submit" value="Cadastrar">
+    </form>
+</div>
+
+<div id="lista">
+    <table id="list">
+        <tr>
+            <th>ID</th>
+            <th>Data de Saída</th>
+            <th>Data de Devolução</th>
+            <th>Motivo</th>
+            <th>Status da Pendência</th>
+            <th>Quantidade de Equipamentos</th>
+            <th>Setor</th>
+            <th>CPF do Funcionário Responsável</th>
+            <th>Ações</th>
+        </tr>
+        {{#each termo}}
+        <tr>
+            <td>{{id_termo}}</td>
+            <td>{{data_saida}}</td>
+            <td>{{data_devolucao}}</td>
+            <td>{{motivo}}</td>
+            <td>{{#if status_pendencia}}Sim{{else}}Não{{/if}}</td>
+            <td>{{quantidade_equipamento}}</td>
+            <td>{{setor}}</td>
+            <td>{{Funcionario_CPF}}</td>
+            <td>
+                <div class="btn-crud" aria-label="Ações">
+                    <a href="/editar-termo/{{id_termo}}" role="button">Editar</a>
+                    <a href="/excluir-termo/{{id_termo}}" role="button">Excluir</a>
+                </div>
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+</div>

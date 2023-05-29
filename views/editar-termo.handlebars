@@ -1,0 +1,31 @@
+<div id="formulario">
+  <h1>Editar Termo</h1>
+  <form method="POST" action="/alterar-termo/{{termo.id_termo}}">
+    <label for="data_saida">Data de Saída:</label>
+    <input type="date" id="data_saida" name="data_saida" value="{{termo.data_saida}}" required>
+    <br>
+    <label for="data_devolucao">Data de Devolução:</label>
+    <input type="date" id="data_devolucao" name="data_devolucao" value="{{termo.data_devolucao}}">
+    <br>
+    <label for="motivo">Motivo:</label>
+    <input type="text" id="motivo" name="motivo" value="{{termo.motivo}}" required>
+    <br>
+    <label for="status_pendencia">Status da Pendência:</label>
+    <select id="status_pendencia" name="status_pendencia">
+      <option value="0" {{#if termo.status_pendencia}}selected{{/if}}>Não</option>
+      <option value="1" {{#if termo.status_pendencia}}selected{{/if}}>Sim</option>
+    </select>
+    <br>
+    <label for="quantidade_equipamento">Quantidade de Equipamentos:</label>
+    <input type="number" id="quantidade_equipamento" name="quantidade_equipamento"
+      value="{{termo.quantidade_equipamento}}">
+    <br>
+    <label for="setor">Setor:</label>
+    <input type="text" id="setor" name="setor" value="{{termo.setor}}">
+    <br>
+    <label for="Funcionario_CPF">CPF do Funcionário Responsável:</label>
+    <input type="text" id="Funcionario_CPF" name="Funcionario_CPF" value="{{termo.Funcionario_CPF}}" required>
+    <br>
+    <input type="submit" value="Salvar">
+  </form>
+</div>

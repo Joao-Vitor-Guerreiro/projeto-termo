@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Lista de Inventário</title>
+</head>
+
+<body>
+	<h1>Lista de Inventário</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Patrimônio</th>
+				<th>Tipo</th>
+				<th>Modelo</th>
+				<th>Localização</th>
+				<th>Informação</th>
+				<th>Periféricos</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each itens}}
+			<tr>
+				<td>{{patrimonio}}</td>
+				<td>{{tipo}}</td>
+				<td>{{modelo}}</td>
+				<td>{{localizacao}}</td>
+				<td>{{informacao}}</td>
+				<td>{{perifericos}}</td>
+				<td>
+					<div class="btn-crud" aria-label="Ações">
+						<a href="/editar-equipamento/{{patrimonio}}" role="button">Editar</a>
+						<a href="/excluir-termo/{{id_termo}}" role="button">Excluir</a>
+					</div>
+				</td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</body>
+
+</html>

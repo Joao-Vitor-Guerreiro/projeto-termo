@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Termo</title>
+</head>
+
+<body>
+    <h1>Lista de Termo</h1>
+    <div id="lista">
+        <table id="list">
+            <tr>
+                <th>ID</th>
+                <th>Data de Saída</th>
+                <th>Data de Devolução</th>
+                <th>Motivo</th>
+                <th>Status da Pendência</th>
+                <th>Quantidade de Equipamentos</th>
+                <th>Setor</th>
+                <th>CPF do Funcionário Responsável</th>
+                <th>Ações</th>
+            </tr>
+            {{#each termo}}
+            <tr>
+                <td>{{id_termo}}</td>
+                <td>{{data_saida}}</td>
+                <td>{{data_devolucao}}</td>
+                <td>{{motivo}}</td>
+                <td>{{#if status_pendencia}}Sim{{else}}Não{{/if}}</td>
+                <td>{{quantidade_equipamento}}</td>
+                <td>{{setor}}</td>
+                <td>{{Funcionario_CPF}}</td>
+                <td>
+                    <div class="btn-crud" aria-label="Ações">
+                        <a href="/editar-termo/{{id_termo}}" role="button">Editar</a>
+                        <a href="/excluir-termo/{{id_termo}}" role="button">Excluir</a>
+                    </div>
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>

@@ -1,0 +1,28 @@
+<div id="lista">
+  <table id="list">
+    <tr>
+      <th>CPF</th>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Ramal</th>
+      <th>Setor</th>
+      <th>Ações</th>
+    </tr>
+    {{#each funcionarios}}
+    <tr>
+      <td>{{CPF}}</td>
+      <td>{{nome}}</td>
+      <td>{{email}}</td>
+      <td>{{ramal}}</td>
+      <td>{{setor}}</td>
+      <td>
+        <div class="btn-crud" aria-label="Ações">
+          <a href="/editar-funcionario/{{CPF}}" role="button">Editar</a>
+          <a href="/excluir-funcionario/{{CPF}}" role="button">Excluir</a>
+        </div>
+
+      </td>
+    </tr>
+    {{/each}}
+  </table>
+</div>

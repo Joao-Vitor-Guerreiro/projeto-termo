@@ -1,0 +1,52 @@
+<div id="formulario">
+    <h1>Formulário de Cadastro Inventário Termo</h1>
+    <form method="POST" action="/add-inventario_termo">
+        <label for="data_registro">Data de Registro:</label>
+        <input type="datetime-local" id="data_registro" name="data_registro" required><br>
+
+        <label for="status_disponibilidade">Status de Disponibilidade:</label>
+        <select id="status_disponibilidade" name="status_disponibilidade">
+            <option value="0" selected>Indisponível</option>
+            <option value="1">Disponível</option>
+        </select><br>
+
+        <label for="inventario_patrimonio">Patrimônio do Inventário:</label>
+        <input type="number" id="inventario_patrimonio" name="inventario_patrimonio" required><br>
+
+        <label for="termo_id_termo">ID do Termo:</label>
+        <input type="number" id="termo_id_termo" name="termo_id_termo" required><br>
+        <br>
+        <input type="submit" value="Cadastrar">
+    </form>
+</div>
+
+<div id="lista"></div>
+<table id="list">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Data de Registro</th>
+            <th>Status de Disponibilidade</th>
+            <th>Inventário Patrimônio</th>
+            <th>ID do Termo</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each itens}}
+        <tr>
+            <td>{{id_inventario_termo}}</td>
+            <td>{{data_registro}}</td>
+            <td>{{status_disponibilidade}}</td>
+            <td>{{Inventario_patrimonio}}</td>
+            <td>{{Termo_id_termo}}</td>
+            <td>
+                <div class="btn-crud" aria-label="Ações">
+                    <a href="/editar-inventario-termo/{{id_inventario_termo}}" role="button">Editar</a>
+                    <a href="/excluir-inventario-termo/{{id_inventario_termo}}" role="button">Excluir</a>
+                </div>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
